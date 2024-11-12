@@ -1,6 +1,6 @@
 export const navigationInfo = [
   {
-    id: "home",
+    id: "",
     title: "Home",
   },
   {

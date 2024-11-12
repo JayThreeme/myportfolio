@@ -202,3 +202,32 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 8 22 / var(--tw-bg-opacity)) /* #050816 */;
+}
+
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(170 166 195 / var(--tw-bg-opacity)) /* #aaa6c3 */;
+}
+
+.bg-tertiary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 16 48 / var(--tw-bg-opacity)) /* #151030 */;
+}
+
+.bg-black-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 13 37 / var(--tw-bg-opacity)) /* #100d25 */;
+}
+
+.bg-black-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 3 37 / var(--tw-bg-opacity)) /* #090325 */;
+}
+
+.bg-hero-pattern {
+  background-image: url("/src/assets/herobg.png");
+}

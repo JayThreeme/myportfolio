@@ -1,37 +1,64 @@
-import { personalInfo } from "../constants/personalInfo";
+//import Tilt from "react-tilt";
+import { motion } from "framer-motion";
+
+//import { personalInfo } from "../constants/personalInfo";
 import { styles } from "../styles";
+import { SectionWrapper } from "../hoc";
+import { fadeIn, textVariant } from "../utils/motion";
+import { download } from "../assets";
+import Technologies from "./Technologies";
+import { personalInfo } from "../constants/personalInfo";
 
 const About = () => {
   return (
-    <section className="relative w-full h-screen mx-auto">
-      <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+    <>
+      <motion.div variants={textVariant()} className="place-items-center ">
+        <p className={styles.sectionSubText}>Get to know me</p>
+        <h2 className={styles.sectionHeadText}>About.</h2>
+      </motion.div>
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-4 text-secondary text-[17px]  leading-[30px] place-items-center  "
       >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
+        <div className="max-w-4xl">
+          <p className="mt-3 text-white-100  ">{personalInfo.about_me}</p>
         </div>
+      </motion.p>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I&apos;m{" "}
-            <span className="text-[#915EFF]">{personalInfo.nickname}</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Front-end |<br className="sm:block hidden" />
-            Back-end Developer
-          </p>
-          <p className="mt-3 text-white-100">{personalInfo.about_me}</p>
-        </div>
-      </div>
-
-      {/* <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-    <a href="#about">
-      <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2"></div>
-    </a>
-  </div> */}
-    </section>
+      <motion.div
+        variants={fadeIn("", "", 0.1, 1)}
+        className="text-center pd-5 align-middle place-items-center mt-6 "
+      >
+        <a
+          href="/my-file.pdf" // Path to file in the public folder
+          download="my-file.pdf" // Name of the downloaded file
+          className="flex items-center px-6 py-2 border-2 border-white text-white font-semibold rounded-lg shadow-md  hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-colors duration-200 w-40"
+        >
+          <motion.div
+            animate={{
+              y: [0, 3, 0],
+            }}
+            transition={{
+              duration: 0.5,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+          >
+            <img
+              src={download}
+              alt="Download Icon"
+              className="w-5 h-5 mr-2 text-white"
+            />
+          </motion.div>
+          Resume
+        </a>
+      </motion.div>
+      <motion.div>
+        <Technologies />
+      </motion.div>
+    </>
   );
 };
 
-export default About;
+const WrappedAbout = SectionWrapper(About, "about");
+export default WrappedAbout;
