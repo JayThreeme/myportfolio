@@ -1,4 +1,5 @@
 import { logo } from "../assets";
+import { socialsInfo } from "../constants/socialsInfo";
 import { SectionWrapper } from "../hoc";
 
 const Footer = () => {
@@ -12,15 +13,15 @@ const Footer = () => {
               alt="logo"
               className="w-36 h-36 object-contain mx-auto"
             />
-            <p className="text-gray-400 max-w-sm">Portfolio</p>
+            {/* <p className="text-gray-400 max-w-sm">Portfolio</p> */}
           </div>
 
           <div className="w-full h-52 text-center md:text-left px-11">
-            <h2 className="text-gray-600 mb-2">Message</h2>
+            {/* <h2 className="text-gray-600 mb-2">Contact</h2>
             <ul className="space-y-2 text-gray-300 ">
               <li>Made With Love</li>
             </ul>
-            <br />
+            <br /> */}
             <h2 className="text-gray-600 mb-2">Location</h2>
             <ul className="space-y-2 text-gray-300 ">
               <li>Baguio City, Philippines, 2600</li>
@@ -30,40 +31,17 @@ const Footer = () => {
           <div className="w-full h-52 text-center md:text-left px-11">
             <h2 className="text-gray-600 mb-2">Socials</h2>
             <ul className="space-y-2 text-gray-300 ">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Mail
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-white transition-colors">
-                  Github
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="hover:text-white transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-white transition-colors"
-                >
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-white transition-colors"
-                >
-                  Instagram
-                </a>
-              </li>
+              {socialsInfo.map((socials) => (
+                <li key={socials.name}>
+                  <a
+                    href={socials.url}
+                    className="hover:text-white transition-colors"
+                    target={socials.target}
+                  >
+                    {socials.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

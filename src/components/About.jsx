@@ -30,8 +30,8 @@ const About = () => {
         className="text-center pd-5 align-middle place-items-center mt-6 "
       >
         <a
-          href="/my-file.pdf" // Path to file in the public folder
-          download="my-file.pdf" // Name of the downloaded file
+          href={"/myportfolio/resume/jimmyjucarjr.pdf"} // Path to file in the public folder
+          download="jimmyjucarjr.pdf" // Name of the downloaded file
           className="flex items-center px-6 py-2 border-2 border-white text-white font-semibold rounded-lg shadow-md  hover:text-orange-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-colors duration-200 w-40"
         >
           <motion.div

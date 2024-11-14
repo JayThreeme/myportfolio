@@ -54,7 +54,7 @@ const Introme = () => {
                 border: "5px solid #fff",
                 objectFit: "cover",
               }}
-              className="w-3/4"
+              className="xl:w-2/4 sm:w-full md:w-2/3"
             />
           </div>
         </div>

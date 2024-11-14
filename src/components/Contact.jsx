@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import emailjs from "@emailjs/browser";
 import { slideIn } from "../utils/motion";
-import { facebook, github, instagram, linkedin, mail } from "../assets";
+import { socialsInfo } from "../constants/socialsInfo";
 
 const Contact = () => {
   const formRef = useRef();
@@ -130,23 +130,18 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Socials.</h3>
 
         <div
-          className={`mt-5 ${styles.paddingX} flex  gap-4 place-content-center `}
+          className={`mt-5 ${styles.paddingX} flex gap-4 place-content-center `}
         >
-          <a href="#" className="w-6/12 h-6/12 object-contain mx-auto">
-            <img src={mail} alt="source code" />
-          </a>
-          <a href="#" className="w-6/12 h-6/12 object-contain">
-            <img src={github} alt="source code" />
-          </a>
-          <a href="#" className="w-6/12 h-6/12 object-contain">
-            <img src={linkedin} alt="source code" />
-          </a>
-          <a href="#" className="w-6/12 h-6/12 object-contain">
-            <img src={facebook} alt="source code" />
-          </a>
-          <a href="#" className="w-6/12 h-6/12 object-contain">
-            <img src={instagram} alt="source code" />
-          </a>
+          {socialsInfo.map((socials) => (
+            <a
+              href={socials.url}
+              key={socials.name}
+              className="w-6/12 object-contain mx-auto"
+              target={socials.target}
+            >
+              <img src={socials.icon} alt="source code" className="" />
+            </a>
+          ))}
         </div>
       </motion.div>
     </div>
